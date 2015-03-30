@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Todo List-->
         <scene sceneID="Rm0-it-DV4">
             <objects>
                 <tableViewController id="nBz-9b-Pgo" sceneMemberID="viewController">
@@ -248,7 +248,13 @@
                             <outlet property="delegate" destination="nBz-9b-Pgo" id="pfH-CO-Lcc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="nc4-2e-w96"/>
+                    <navigationItem key="navigationItem" title="Todo List" id="nc4-2e-w96">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kQ9-Mv-9vc">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="mdC-1J-U6h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLe-N8-IxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,6 +300,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P9d-YJ-h9M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
