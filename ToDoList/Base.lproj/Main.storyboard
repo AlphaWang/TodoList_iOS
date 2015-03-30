@@ -251,7 +251,7 @@
                     <navigationItem key="navigationItem" title="Todo List" id="nc4-2e-w96">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kQ9-Mv-9vc">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="mdC-1J-U6h"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="mdC-1J-U6h"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
