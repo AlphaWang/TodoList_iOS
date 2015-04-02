@@ -7,8 +7,11 @@
 //
 
 #import "TodoListTableViewController.h"
+#import "TodoItem.h"
 
 @interface TodoListTableViewController ()
+
+@property NSMutableArray *todoItems;
 
 @end
 
@@ -16,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.todoItems = [[NSMutableArray alloc] init];
+    [self loadInititalData];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -100,6 +106,20 @@
 //unwind segue
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
     
+}
+
+- (void)loadInititalData {
+    TodoItem *item1 = [[TodoItem alloc] init];
+    item1.itemName = @"test todo item 1";
+    [self.todoItems addObject:item1];
+    
+    TodoItem *item2 = [[TodoItem alloc] init];
+    item2.itemName = @"test todo item 2";
+    [self.todoItems addObject:item2];
+    
+    TodoItem *item3 = [[TodoItem alloc] init];
+    item3.itemName = @"test todo item 3";
+    [self.todoItems addObject:item3];
 }
 
 @end
