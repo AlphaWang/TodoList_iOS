@@ -52,8 +52,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    
+    // 1. text
     TodoItem *todoItem = [self.todoItems objectAtIndex:indexPath.row];
     cell.textLabel.text = todoItem.itemName;
+    
+    // 2. completed
+    if (todoItem.completed) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
@@ -103,11 +112,12 @@
 }
 */
 
-//unwind segue
+// unwind segue
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
     
 }
 
+// init todoItems
 - (void)loadInititalData {
     TodoItem *item1 = [[TodoItem alloc] init];
     item1.itemName = @"test todo item 1";
@@ -121,5 +131,20 @@
     item3.itemName = @"test todo item 3";
     [self.todoItems addObject:item3];
 }
+
+// tap event
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // deselect the cell immediately after selection
+    // [Q]: already set by ListPrototypeCell.selection = NONE ??
+    // [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    // toggle
+    TodoItem *tappedItem = [self.todoItems objectAtIndex:indexPath.row];
+    tappedItem.completed = !tappedItem.completed;
+    
+    // reload
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
+
 
 @end
