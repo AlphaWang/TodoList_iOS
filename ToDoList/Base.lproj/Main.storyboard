@@ -74,7 +74,7 @@
                             <constraint firstItem="sbw-b3-bPC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zrx-Dt-Atf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title=" Add To-Do Item" id="uZK-vJ-Pfe">
+                    <navigationItem key="navigationItem" title=" Add To-Do Item" id="uZK-vJ-Pfe" userLabel="Add To-Do Item">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="SuJ-Wr-xFi">
                             <connections>
                                 <segue destination="akN-pf-p00" kind="unwind" unwindAction="unwindToList:" id="MfE-Qh-8qb"/>
@@ -86,6 +86,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="SaveButton" destination="YUJ-Bk-mcm" id="PJO-Ed-seQ"/>
+                        <outlet property="textField" destination="sbw-b3-bPC" id="G9W-qG-9Mn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="akN-pf-p00" userLabel="Exit" sceneMemberID="exit"/>
